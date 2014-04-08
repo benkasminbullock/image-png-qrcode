@@ -3,5 +3,9 @@ use warnings;
 use strict;
 use Perl::Build;
 perl_build (
+    c => [{
+	dir => '/home/ben/projects/qrduino',
+	stems => [qw/qrencode qrpng/],
+    }],
 );
 exit;
