@@ -4,7 +4,7 @@ use strict;
 use Perl::Build;
 perl_build (
     c => [{
-	dir => '/home/ben/projects/qrduino',
+	dir => '/home/ben/projects/qrpng',
 	stems => [qw/qrencode qrpng/],
     }],
 );

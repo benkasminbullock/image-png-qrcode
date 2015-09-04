@@ -1,5 +1,9 @@
 Revision history for CPAN module Image::PNG::QRCode
 
+0.04 2015-09-05
+
+* Remove link to defunct URL from documentation
+
 0.03 2014-05-27
 
 * Fixes bug when using return values

@@ -110,7 +110,7 @@ imposed.
 
 =head1 DIAGNOSTICS
 
-This section is under construction.
+This section is not completed.
 
 =over
 
@@ -132,15 +132,8 @@ makes F<qrcode.png>. Try
 
 for more options.
 
-There is an example script F<qrpng.cgi> in F<examples>.
-
-=begin html
-
-<p>It makes a QR code for HTML:</p>
-
-<img src='http://www.lemoda.net/png/qrcode/qrpng.cgi?w=Image::PNG::QRCode%20is%20probably%20the%20best%20QR%20code%20module%20in%20the%20world'>
-
-=end html
+There is an example script F<qrpng.cgi> in F<examples> which makes a
+PNG from a user's input.
 
 =head1 SEE ALSO
 
@@ -265,7 +258,7 @@ The QR codes have only been checked by using one Android smartphone.
 
 The QR code creation part (the contents of F<qrencode.c> in the
 distribution) is copyright 2010, tz@execpc.com. The rest of the module
-is copyright by Ben Bullock 2014.
+is copyright by Ben Bullock 2015.
 
 This Perl module is licensed under the Gnu General Public Licence
 version 3.
