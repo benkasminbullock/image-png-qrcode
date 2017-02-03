@@ -14,3 +14,6 @@ blib/*
 MYMETA.*
 META.*
 ppport.h
+# Copied from the other project.
+qrencode.[ch]
+qrpng.[ch]

@@ -1,4 +1,5 @@
-typedef struct {
+typedef struct
+{
     SV * png_image;
 }
 scalar_as_image_t;
@@ -28,6 +29,7 @@ qrpng_internal (HV * options)
     qrpng_t qrpng = {0};
     SV ** sv_ptr;
     qrpng_status_t qrpng_status;
+    SV ** size_ptr;
 
     /* Get the text. This is assumed to exist. */
     
@@ -114,6 +116,15 @@ qrpng_internal (HV * options)
 	HASH_FETCH_PV (options, out);
 	qrpng.filename = out;
 	qrpng_write (& qrpng);
+    }
+    size_ptr = hv_fetch (options, "size", strlen ("size"), 0);
+    if (size_ptr) {
+	fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
+	if (SvROK (* size_ptr) && SvTYPE (SvRV (* size_ptr)) < SVt_PVAV) {
+	    SV * sv = SvRV (* size_ptr);
+	    fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
+	    sv_setuv (sv, (UV) qrpng.img_size);
+	}
     }
     qrfree (& qr);
     qrpng_free (& qrpng);

@@ -106,6 +106,13 @@ C<scale> is a positive integer which specifies how many pixels one
 can't use fractional values. An arbitrary upper limit of 100 is
 imposed.
 
+=item size
+
+    qrpng (text => 'lime green', size => \$size);
+
+Get the size (height and width in pixels) of the output PNG. This
+requires a scalar reference.
+
 =back
 
 =head1 DIAGNOSTICS
@@ -189,8 +196,8 @@ graphical part. At the time of writing, the last update was in 2004.
 =item qrduino
 
 L<qrduino|https://github.com/tz1/qrduino> is a QR code generator
-developed for a platform called the Arduino. Image::PNG::QRCode is a
-fork of this project.
+developed for a platform called the Arduino by Tom
+Zerucha. Image::PNG::QRCode is a fork of this project.
 
 =item libqrencode
 
@@ -252,13 +259,14 @@ the original thing leading to reading uninitialized memory.
 This encoder doesn't support the "shift-JIS" format. UTF-8 seems to
 pass through it OK. It doesn't use a BOM for the UTF-8.
 
-The QR codes have only been checked by using one Android smartphone.
+The QR codes have only been checked by using two Android smartphones.
 
 =head1 COPYRIGHT AND LICENCE
 
 The QR code creation part (the contents of F<qrencode.c> in the
-distribution) is copyright 2010, tz@execpc.com. The rest of the module
-is copyright by Ben Bullock 2015.
+distribution) is copyright 2010, Tom Zerucha,
+https://github.com/tz1. The rest of the module is copyright by Ben
+Bullock 2015-2017.
 
 This Perl module is licensed under the Gnu General Public Licence
 version 3.

@@ -21,12 +21,15 @@ print $o $s;
 close $o or die $!;
 is (compare ($pngfile, $pngfile2), 0);
 
+my $size3;
 my $pngfile3 = "$FindBin::Bin/test3.png";
-qrpng (text => "ballroom blitz", scale => 6, out => $pngfile3);
+qrpng (text => "ballroom blitz", scale => 6, out => $pngfile3, size => \$size3);
 
 ok (-f $pngfile3);
 ok (-s $pngfile3 > 0);
-
+ok (defined $size3, "got any size for image");
+ok ($size3 > 0, "got a valid size for image");
+note ($size3);
 my $pngfile4 = "$FindBin::Bin/test4.png";
 qrpng (text => "monster mash", scale => 6, quiet => 10, out => $pngfile4);
 

@@ -1,5 +1,9 @@
 Revision history for CPAN module Image::PNG::QRCode
 
+0.05 2015-09-05
+
+* Better comments and attribution in source files and documentation
+
 0.04 2015-09-05
 
 * Remove link to defunct URL from documentation
