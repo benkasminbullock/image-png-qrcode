@@ -17,3 +17,7 @@ ppport.h
 # Copied from the other project.
 qrencode.[ch]
 qrpng.[ch]
+examples/*-out.txt
+*.png
+makeitfile
+lib/Image/PNG/QRCode.pod

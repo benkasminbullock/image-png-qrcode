@@ -119,10 +119,10 @@ qrpng_internal (HV * options)
     }
     size_ptr = hv_fetch (options, "size", strlen ("size"), 0);
     if (size_ptr) {
-	fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
+//	fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
 	if (SvROK (* size_ptr) && SvTYPE (SvRV (* size_ptr)) < SVt_PVAV) {
 	    SV * sv = SvRV (* size_ptr);
-	    fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
+//	    fprintf (stderr, "%s:%d: OK baby.\n", __FILE__, __LINE__);
 	    sv_setuv (sv, (UV) qrpng.img_size);
 	}
     }

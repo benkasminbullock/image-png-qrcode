@@ -1,3 +1,10 @@
+[% MACRO example(file) BLOCK %]
+[%- pl = file _ ".pl" -%]
+[%- out = file _ "-out.txt" -%]
+[% INCLUDE $pl | xtidy %]
+
+(This example is included as L<F<[% pl %]>|https://api.metacpan.org/source/BKB/[% info.name %]-[% info.version %]/examples/[% pl %]> in the distribution.)
+[% END %]
 =encoding UTF-8
 
 =head1 NAME
@@ -6,8 +13,13 @@ Image::PNG::QRCode - make a PNG image containing a QR code from text
 
 =head1 SYNOPSIS
 
-    use Image::PNG::QRCode 'qrpng';
-    qrpng (text => 'boom shake shake shake the room', out => 'shake.png');
+[% example("synopsis") %]
+
+=head1 VERSION
+
+This documents [% info.colon %] version [% info.version %]
+corresponding to git commit L<[% commit.commit %]|[% info.repo
+%]/commit/[% commit.commit %]> released on [% commit.date %].
 
 =head1 DESCRIPTION
 
@@ -117,13 +129,48 @@ requires a scalar reference.
 
 =head1 DIAGNOSTICS
 
-This section is not completed.
-
 =over
 
-=item %!$#"@*
+=item Overwriting input text '$options{text}' with contents of file $options{in}
 
-This message is produced in the case of errors.
+(Warning) User requested conflicting options.
+
+=item No input
+
+(Fatal) No file or text input was supplied to L</qrpng>
+
+=item quiet zone cannot be negative
+
+(Fatal) User value for L</quiet> was negative
+
+=item requested quiet zone, $options{quiet}, exceeds arbitrary maximum of 100
+
+(Fatal) User requested very large quiet zone
+
+=item negative or zero scale $options{scale}
+
+(Fatal) L</scale> was negative or zero
+
+=item scale option needs to be an integer
+
+(Fatal)
+
+=item requested scale, $options{scale}, exceeds arbitrary maximum of 100
+
+(Fatal) See L</scale>.
+
+=item Bad version number $options{version}: use integer between one and forty
+
+(Fatal) See L</level>.
+
+=item Bad level number $options{level}: use integer between one and four
+
+(Fatal) See L</level>.
+
+=item size option requires a scalar reference
+
+(Warning) See L</size>. In this case, tThe supplied value is deleted
+from the inputs.
 
 =back
 

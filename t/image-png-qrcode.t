@@ -51,6 +51,15 @@ ok (-s $pngfile6 > 0);
 my $png = qrpng (text => 'buggles');
 ok ($png, "Created a PNG using return value");
 like ($png, qr/^.PNG/, "contains a PNG image");
+my $warning;
+{
+    local $SIG{__WARN__} = sub {
+	$warning = "@_";
+    };
+    $warning = '';
+    my $pngout = qrpng (text => 'monkey', size => \my @notascalarref);
+    like ($warning, qr/size option requires a scalar reference/);
+};
 
 TODO: {
     local $TODO = 'not implemented yet';

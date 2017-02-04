@@ -7,5 +7,6 @@ perl_build (
 	dir => '/home/ben/projects/qrduino',
 	stems => [qw/qrencode qrpng/],
     }],
+    make_pod => './make-pod.pl',
 );
 exit;

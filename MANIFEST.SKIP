@@ -1,4 +1,4 @@
-build\.pl
+^(build|make-pod)\.pl$
 blib/.*
 .gitignore
 .git/.*
@@ -12,3 +12,4 @@ MYMETA..*
 ^(qrpng|qrencode)\.o$
 .*\.png$
 ^makeitfile$
+^examples/.*-out\.txt$

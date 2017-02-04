@@ -8,7 +8,7 @@ require Exporter;
 use warnings;
 use strict;
 use Carp;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 require XSLoader;
 XSLoader::load ('Image::PNG::QRCode', $VERSION);
 
@@ -58,6 +58,12 @@ sub qrpng
 	if ($options{level} < 1 || $options{level} > 4 ||
 	    $options{level} != int ($options{level})) {
 	    croak "Bad level number $options{level}: use integer between one and four";
+	}
+    }
+    if ($options{size}) {
+	if (ref $options{size} ne 'SCALAR') {
+	    carp "size option requires a scalar reference";
+	    delete $options{size};
 	}
     }
     my $r = defined wantarray () && ! wantarray ();
