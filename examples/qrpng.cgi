@@ -1,7 +1,6 @@
 #!/home/ben/software/install/bin/perl
 use warnings;
 use strict;
-use lib '/home/protected/lib';
 use Image::PNG::QRCode 'qrpng';
 use URI::Escape;
 

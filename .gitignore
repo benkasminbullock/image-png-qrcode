@@ -21,3 +21,5 @@ examples/*-out.txt
 *.png
 makeitfile
 lib/Image/PNG/QRCode.pod
+MANIFEST
+README

@@ -3,6 +3,7 @@ Revision history for CPAN module Image::PNG::QRCode
 0.06 2017-02-04
 
 * Return size of image to user with size option
+* Improve documentation (diagnostics, examples, etc.)
 
 0.05 2015-09-05
 
