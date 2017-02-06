@@ -172,6 +172,16 @@ requires a scalar reference.
 (Warning) See L</size>. In this case, the supplied value is deleted
 from the inputs.
 
+=item Return value used twice
+
+(Warning) The user used both the return value of qrpng and specified
+the L</out> option.
+
+=item Output discarded: use return value or specify 'out => \$value'
+
+(Warning) The user called qrpng in void context and with the L</out>
+option unspecified.
+
 =back
 
 =head1 SCRIPT
