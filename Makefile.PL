@@ -2,10 +2,10 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+# Check whether the user has the PNG library.
+
 use lib 'inc';
-
 use Devel::CheckLib;
-
 check_lib_or_exit (lib => 'png', header => 'png.h');
 
 my $pm = 'lib/Image/PNG/QRCode.pm';
