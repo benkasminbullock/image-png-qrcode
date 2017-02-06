@@ -59,6 +59,14 @@ my $warning;
     $warning = '';
     my $pngout = qrpng (text => 'monkey', size => \my @notascalarref);
     like ($warning, qr/size option requires a scalar reference/);
+    $warning = '';
+    qrpng (text => 'ape');
+    like ($warning, qr/Output discarded/);
+    $warning = '';
+    my $x = qrpng (text => 'ape', out => \my $y);
+    like ($warning, qr/used twice/);
+    # Check that the two outputs are OK anyway.
+    is ($x, $y);
 };
 
 TODO: {

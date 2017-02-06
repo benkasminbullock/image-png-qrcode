@@ -6,7 +6,6 @@
 #define PNG_SKIP_SETJMP_CHECK
 #include <png.h>
 
-#include "my-xs.h"
 #include "qrencode.h"
 #include "qrpng.h"
 

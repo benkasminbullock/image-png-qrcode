@@ -174,7 +174,7 @@ from the inputs.
 
 =back
 
-=head1 SCRIPT AND EXAMPLES
+=head1 SCRIPT
 
 There is a script "qrpng" installed with the module:
 
@@ -186,10 +186,20 @@ makes F<qrcode.png>. Try
 
 for more options.
 
-There is an example script F<qrpng.cgi> in F<examples> which makes a
-PNG from a user's input.
+=head1 EXAMPLES
+
+=head2 qrpng.cgi
+
+There is an example CGI (common gateway interface) script F<qrpng.cgi>
+in F<examples> which makes a PNG from a user's input.
 
 [% INCLUDE "qrpng.cgi" | xtidy %]
+
+=head2 qrpng-data.pl
+
+This example makes a data URL QR code:
+
+[% example("qrpng-data") %]
 
 =head1 SEE ALSO
 

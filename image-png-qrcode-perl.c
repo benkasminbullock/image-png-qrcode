@@ -1,3 +1,21 @@
+/* Fetch a value "field" from a hash. */
+
+#define HASH_FETCH_PV(hash,field) {                             \
+        SV * field_sv;                                          \
+	SV ** field_sv_ptr = hv_fetch (hash, #field,		\
+				       strlen (#field), 0);	\
+	if (! field_sv_ptr) {					\
+	    fprintf (stderr, "%s:%d: "				\
+		     "Field '%s' in '%s' not valid.\n",		\
+		     __FILE__, __LINE__,			\
+		     #field, #hash);				\
+	    return;						\
+	}							\
+	field_sv = * field_sv_ptr;				\
+        field = SvPV (field_sv, field ## _length);              \
+    }
+
+
 typedef struct
 {
     SV * png_image;
@@ -112,7 +130,6 @@ qrpng_internal (HV * options)
     else {
 	char * out;
 	unsigned int out_length;
-
 	HASH_FETCH_PV (options, out);
 	qrpng.filename = out;
 	qrpng_write (& qrpng);

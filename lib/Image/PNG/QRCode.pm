@@ -66,18 +66,45 @@ sub qrpng
 	    delete $options{size};
 	}
     }
-    my $r = defined wantarray () && ! wantarray ();
-    my $s = $options{out} && ref $options{out} eq 'SCALAR';
-    if ($r || $s) {
+    # If true, user will use the return value.
+    my $r;
+    # If true, user wants to write the PNG data into a scalar.
+    my $s;
+    # Check what kind of output the user wants.
+    if (defined (wantarray ())) {
+	# User wants a return value.
 	$options{out_sv} = 1;
+	$r = 1;
+    }
+    if ($options{out}) {
+	if (ref $options{out} eq 'SCALAR') {
+	    # User wants to write the PNG data into a scalar.
+	    $options{out_sv} = 1;
+	    $s = 1;
+	    if ($r) {
+		# User wants both the return value and to use as
+		# scalar, for some reason.
+		carp "Return value used twice";
+	    }
+	}
+	# Else user wants to write the PNG data to a file.
+    }
+    else {
+	if (! $r) {
+	    # Don't know what the user wants, tell them they haven't
+	    # specified how to output and give up.
+	    carp "Output discarded: use return value or specify 'out => \\\$value'";
+	    return undef;
+	}
     }
     qrpng_internal (\%options);
+    if ($s) {
+	${$options{out}} = $options{png_data};
+    }
     if ($r) {
 	return $options{png_data};
     }
-    elsif ($s) {
-	${$options{out}} = $options{png_data};
-    }
+    return undef;
 }
 
 1;
