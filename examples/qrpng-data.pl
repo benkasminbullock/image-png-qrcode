@@ -6,5 +6,5 @@ use URI;
 my $data = 'abcdefghijklmnopqrstuvwxyz';
 my $u = URI->new ('data:');
 $u->media_type ('image/png');
-qrpng (text => $data);
-#print "$u\n";
+$u->data (qrpng (text => $data));
+print "<img src='$u'>\n";
