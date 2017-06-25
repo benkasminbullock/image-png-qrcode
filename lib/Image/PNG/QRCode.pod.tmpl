@@ -3,7 +3,7 @@
 [%- out = file _ "-out.txt" -%]
 [% INCLUDE $pl | xtidy %]
 
-(This example is included as L<F<[% pl %]>|https://api.metacpan.org/source/BKB/[% info.name %]-[% info.version %]/examples/[% pl %]> in the distribution.)
+(This example is included as L<F<[% pl %]>|https://fastapi.metacpan.org/source/BKB/[% info.name %]-[% info.version %]/examples/[% pl %]> in the distribution.)
 [% END %]
 =encoding UTF-8
 
@@ -226,11 +226,11 @@ inventors of the QR code, contains much information.
 
 =item Imager::QRCode
 
-L<Imager::QRCode> is based on the L<Imager> module and libqrencode.
+L<Imager::QRCode> is based on the L<Imager> module and L</libqrencode>.
 
 =item Text::QRCode
 
-L<Text::QRCode> makes a text QR code. It's based on libqrencode.
+L<Text::QRCode> makes a text QR code. It's based on L</libqrencode>.
 
 =item HTML::QRCode
 
@@ -253,8 +253,14 @@ L<Image::QRCode::Effects> is based on L<Imager::QRCode> and adds
 
 =item GD::Barcode::QRcode
 
-Pure-Perl implementation of QR codes using the GD library for the
-graphical part. At the time of writing, the last update was in 2004.
+L<GD::Barcode::QRcode> is a Pure-Perl implementation of QR codes using
+the GD library for the graphical part. At the time of writing, the
+last update was in 2004.
+
+=item Vector::QRCode::EPS
+
+L<Vector::QRCode::EPS> is a generator that returns a QRCode data as
+L<PostScript::Simple> object.
 
 =back
 
