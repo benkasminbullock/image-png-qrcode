@@ -23,4 +23,4 @@ makeitfile
 lib/Image/PNG/QRCode.pod
 MANIFEST
 README
-inc/Devel/CheckLib.pm
+inc/*

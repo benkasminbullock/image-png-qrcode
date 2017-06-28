@@ -1,5 +1,9 @@
 Revision history for CPAN module Image::PNG::QRCode
 
+0.08_01 2017-06-28
+
+* Delete Devel::CheckLib & use own detection for libpng
+
 0.08 2017-06-25
 
 * Build cleanup and documentation links
