@@ -44,7 +44,7 @@ WriteMakefile (
 #	    homepage => 'http://',
         },
     },
-    MIN_PERL_VERSION => '5.006001',
+    MIN_PERL_VERSION => '5.008001',
     OBJECT => 'QRCode.o qrencode.o qrpng.o',
     #    OPTIMIZE => '-Wall -g -O',
     EXE_FILES => ['script/qrpng',],
