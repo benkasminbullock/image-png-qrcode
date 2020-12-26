@@ -11,7 +11,7 @@ my $repo = "https://$github";
 
 my $verbose;# = 1;
 
-my $vars = check_for_libpng ($verbose);
+my $vars = check_for_libpng (verbose => $verbose);
 
 if (! $vars) {
     print STDERR "Could not find libpng, exiting.\n";

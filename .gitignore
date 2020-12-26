@@ -13,10 +13,10 @@ pm_to_blib
 blib/*
 MYMETA.*
 META.*
-ppport.h
+#ppport.h
 # Copied from the other project.
-qrencode.[ch]
-qrpng.[ch]
+#qrencode.[ch]
+#qrpng.[ch]
 examples/*-out.txt
 *.png
 makeitfile
