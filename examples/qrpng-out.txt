@@ -1,0 +1,4 @@
+Content-Type: text/plain
+Status: 400
+
+You didn't send anything, use me like this: qrpng.cgi?w=message-to-encode
