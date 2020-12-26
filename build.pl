@@ -9,6 +9,7 @@ use Sys::Hostname;
 my $name = hostname ();
 my %build = (
     make_pod => './make-pod.pl',
+    no_clean => 1,
 );
 if ($name eq 'mikan') {
     $build{c} = [{

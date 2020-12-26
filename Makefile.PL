@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
-use lib 'inc';
+use FindBin '$Bin';
+use lib "$Bin/inc";
 use CheckForLibPng;
 
 my $pm = 'lib/Image/PNG/QRCode.pm';
