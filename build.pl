@@ -4,7 +4,6 @@ use strict;
 use FindBin '$Bin';
 use lib "$Bin/copied/lib";
 use Perl::Build;
-use Sys::Hostname;
 
 my %build = (
     make_pod => './make-pod.pl',
@@ -18,6 +17,7 @@ my %build = (
 
 if ($ENV{CI}) {
     delete $build{c};
+    delete $build{pre};
     $build{verbose} = 1;
     $build{no_make_examples} = 1;
 }
