@@ -6,17 +6,21 @@ use lib "$Bin/copied/lib";
 use Perl::Build;
 use Sys::Hostname;
 
-my $name = hostname ();
 my %build = (
     make_pod => './make-pod.pl',
     no_clean => 1,
-);
-if ($name eq 'mikan') {
-    $build{c} = [{
+    c => [{
 	dir => '/home/ben/projects/qrduino',
 	stems => [qw/qrencode qrpng/],
-    }];
-    $build{pre} = "/home/ben/projects/check4libpng/copy2inc.pl $Bin/inc";
+    }],
+    pre => "/home/ben/projects/check4libpng/copy2inc.pl $Bin/inc",
+);
+
+if ($ENV{CI}) {
+    delete $build{c};
+    $build{verbose} = 1;
+    $build{no_make_examples} = 1;
 }
+
 perl_build (%build);
 exit;

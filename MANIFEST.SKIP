@@ -16,3 +16,4 @@ MYMETA..*
 .*\.tmpl$
 ^xt/.*\.t$
 ^copied/.*$
+^\.(travis|appveyor)\.yml$
