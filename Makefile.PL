@@ -23,7 +23,7 @@ WriteMakefile (
     NAME => 'Image::PNG::QRCode',
     VERSION_FROM => $pm,
     ABSTRACT_FROM => $pod,
-    AUTHOR => 'Ben Bullock <bkb@cpan.org>',
+    AUTHOR => 'Ben Bullock <benkasminbullock@gmail.com>',
     LICENSE => 'gpl_3',
     PREREQ_PM => {
     },
